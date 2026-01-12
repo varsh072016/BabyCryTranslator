@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Baby Cry Translator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero" style="background-image: url('{{ url_for('static', filename='images/hero.jpg') }}');">
+    <div class="hero-text">
+        <h1>Baby Cry Translator</h1>
+        <p>Upload your baby's cry to detect the reason!</p>
+    </div>
+</div>
+
+<!-- UPLOAD -->
+<div class="upload-area">
+    <form method="POST" enctype="multipart/form-data">
+        <label class="upload-pill">
+            Upload Audio
+            <input type="file" name="audio" accept=".wav" required>
+        </label>
+        <button type="submit">Analyze</button>
+        <span id="file-name"></span>
+    </form>
+</div>
+
+<!-- CONFIDENCE MESSAGE -->
+{% if confidence_msg %}
+<div class="confidence-message">
+    <p>{{ confidence_msg }}</p>
+</div>
+{% endif %}
+
+<!-- RESULTS -->
+{% if results %}
+<div class="result-area">
+    <h2>Top Predictions</h2>
+    <div class="prediction-bars">
+        {% for label, value in results %}
+        <div class="bar-row">
+            <div class="bar-label">{{ label }}</div>
+            <div class="bar-track">
+                <div class="bar-fill" style="width: {{ value }}%;"></div>
+            </div>
+            <div class="bar-value">{{ value }}%</div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+<!-- AI Ethics Disclaimer -->
+<div class="ai-ethics">
+    <p>
+        ⚠️ This tool is for <strong>informational purposes only</strong>. 
+        It uses AI to predict reasons for baby crying and <strong>cannot replace professional medical advice</strong>. 
+        Always consult a pediatrician for health concerns. 
+        By using this tool, you acknowledge responsible use of AI predictions.
+    </p>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    &copy; 2026 Baby Cry Translator. All rights reserved.
+</footer>
+
+<script>
+const fileInput = document.querySelector("input[name='audio']");
+const fileName = document.getElementById("file-name");
+
+fileInput.addEventListener("change", () => {
+    fileName.textContent = fileInput.files[0].name;
+});
+</script>
+
+</body>
+</html>

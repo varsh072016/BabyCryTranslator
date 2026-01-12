@@ -1,0 +1,179 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
+
+/* GLOBAL STYLES */
+body {
+    margin: 0;
+    font-family: 'Dancing Script', cursive;
+    background: linear-gradient(to bottom, #fff7f3, #fde2e2);
+    color: #333;
+}
+
+/* HERO */
+.hero {
+    height: 85vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-text {
+    background: rgba(255,255,255,0.65);
+    padding: 30px 45px;
+    border-radius: 25px;
+    text-align: center;
+}
+
+.hero-text h1 {
+    font-size: 3.6rem;
+}
+
+/* UPLOAD AREA */
+.upload-area {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.upload-pill {
+    background: linear-gradient(135deg, #ff8fab, #ff5c8a);
+    color: white;
+    padding: 16px 36px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    font-family: 'Dancing Script', cursive;
+    transition: transform 0.2s ease;
+}
+
+.upload-pill:hover {
+    transform: scale(1.05);
+}
+
+.upload-pill input {
+    display: none;
+}
+
+#file-name {
+    display: block;
+    margin-top: 6px;
+    font-size: 0.9rem;
+    opacity: 0.85;
+}
+
+button {
+    margin-left: 0;
+    padding: 14px 28px;
+    border-radius: 50px;
+    border: none;
+    background: #ff4d6d;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: 'Dancing Script', cursive;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background: #ff6b85;
+}
+
+/* CONFIDENCE MESSAGE */
+.confidence-message {
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.6rem;
+    color: #ff4d6d;
+    margin-bottom: 25px;
+}
+
+/* RESULTS AREA */
+.result-area {
+    max-width: 700px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.result-area h2 {
+    text-align: center;
+    font-size: 2.4rem;
+    font-family: 'Dancing Script', cursive;
+}
+
+/* PREDICTION BARS */
+.prediction-bars {
+    margin-top: 30px;
+}
+
+.bar-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.bar-label {
+    width: 120px;
+    font-size: 1.4rem;
+    color: #ff4d6d;
+    font-family: 'Dancing Script', cursive;
+}
+
+.bar-track {
+    flex: 1;
+    height: 12px;
+    background: #ffe5ec;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 0 8px;
+}
+
+.bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #ff4d6d, #ff8fab);
+    border-radius: 10px;
+    animation: grow 1.2s ease-out;
+}
+
+.bar-value {
+    width: 60px;
+    font-size: 0.95rem;
+    font-family: 'Dancing Script', cursive;
+}
+
+@keyframes grow {
+    from { width: 0; }
+}
+
+/* AI ETHICS */
+.ai-ethics {
+    max-width: 700px;
+    margin: 40px auto 20px auto;
+    padding: 15px 20px;
+    background: #fff0f2;
+    border-left: 5px solid #ff4d6d;
+    border-radius: 12px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.4;
+    text-align: center;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 22px;
+    font-size: 0.9rem;
+    opacity: 0.7;
+    font-family: 'Dancing Script', cursive;
+}
+
+/* BUTTON ALIGNMENT INLINE */
+.upload-area .upload-pill,
+.upload-area button {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+}
